@@ -1,0 +1,22 @@
+{
+    "AWSTemplateFormatVersion": "2010-09-09",
+    "Resources": {
+        "InputDataBucket": {
+            "Type": "AWS::S3::Bucket",
+            "Properties":{
+            "BucketName": {
+                 "Fn::Join": ["", ["facies-inputdata-", {"Ref": "AWS::AccountId" }  ] ]
+            } }
+        },
+
+        "ResultsBucket": {
+            "Type": "AWS::S3::Bucket",
+            "Properties":{
+            "BucketName": {
+                "Fn::Join": ["", ["facies-results-", { "Ref": "AWS::AccountId" } ] ]
+            }
+            }
+        }
+    
+    }
+}
